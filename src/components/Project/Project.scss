@@ -1,0 +1,96 @@
+@import "../../index.scss";
+
+.project-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 3vmax;
+  padding: 3vmax;
+  justify-content: flex-start;
+  align-items: flex-start;
+
+  > h2 {
+    font-size: 3vmax;
+    letter-spacing: -1px;
+    word-spacing: -3px;
+    font-weight: 900;
+  }
+
+  > p {
+    word-spacing: 0.2vmax;
+    line-height: 2vmax;
+    font-size: 1.3rem;
+    color: $font-blue;
+  }
+
+  > button {
+    width: 50%;
+    color: $bg-primary;
+    cursor: pointer;
+    display: flex;
+    background: transparent;
+    border: 1px solid $bg-primary;
+    padding: 1vmax 1.2vmax;
+    font-size: 1.2vmax;
+    position: relative;
+    transition: 0.1s color;
+    border-radius: 2px;
+
+    &::before {
+      content: "";
+      width: 0;
+      height: 100%;
+      background: $bg-primary;
+      position: absolute;
+      top: 0;
+      left: 0;
+      right: 0;
+      bottom: 0;
+      transition: 0.2s ease-in-out;
+      z-index: -10;
+    }
+
+    &:hover {
+      color: $white;
+      &::before {
+        width: 100%;
+      }
+    }
+  }
+}
+
+@media (max-width: 1000px) {
+  .project-wrapper {
+    > h2 {
+      font-size: 4vmax;
+    }
+    > p {
+      line-height: 3vmax;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 700px) {
+  .project-wrapper {
+    gap: 2.2rem;
+    > button {
+      margin: auto;
+      font-size: 2vmax;
+    }
+
+    > p {
+      //   border: 2px solid red;
+      display: flex;
+      justify-content: center;
+      font-size: 1rem;
+    }
+  }
+}
+
+@media (max-width: 500px) {
+  .project-wrapper {
+    > button {
+      width: 100%;
+    }
+  }
+}

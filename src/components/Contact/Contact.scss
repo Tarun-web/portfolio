@@ -1,0 +1,170 @@
+@import "../../index.scss";
+
+* {
+  // border: 1px solid green;
+}
+
+.contact-wrapper {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+
+  > h2,
+  > p {
+    text-align: center;
+  }
+  > h2 {
+    font-size: 3vmax;
+    // font-weight: 900;
+    color: $bg-primary;
+  }
+  > .desc {
+    width: 40%;
+    text-align: center;
+    margin: 1rem auto;
+    margin-bottom: 3.5rem;
+    color: $font-blue;
+
+    > p {
+      font-size: 1.2vmax;
+    }
+  }
+
+  > form {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+    height: 50%;
+    width: 50%;
+    margin: 0 auto;
+    justify-content: space-around;
+    > .details {
+      min-width: 100%;
+      display: flex;
+      justify-content: space-between;
+      gap: 2rem;
+
+      > .right,
+      > .left {
+        // width: 50%;
+        display: flex;
+        flex-direction: column;
+        flex: 1;
+      }
+    }
+
+    > .message {
+      min-width: 100%;
+      display: flex;
+      flex-direction: column;
+
+      // > textarea {
+      // }
+    }
+
+    .submit {
+      width: 100%;
+
+      > button {
+        width: 40%;
+        margin: auto;
+        color: $bg-primary;
+        cursor: pointer;
+        display: flex;
+        background: transparent;
+        border: 1px solid $bg-primary;
+        padding: 1vmax 1.2vmax;
+        font-size: 1.2vmax;
+        position: relative;
+        transition: 0.1s color;
+        border-radius: 2px;
+
+        &::before {
+          content: "";
+          width: 0;
+          height: 100%;
+          background: $bg-primary;
+          position: absolute;
+          top: 0;
+          left: 0;
+          right: 0;
+          bottom: 0;
+          transition: 0.2s ease-in-out;
+          z-index: -10;
+        }
+
+        &:hover {
+          color: $white;
+          &::before {
+            width: 100%;
+          }
+        }
+      }
+    }
+  }
+}
+
+input,
+textarea {
+  border: none;
+  border-bottom: 1px solid $font-blue;
+  padding: 1rem 0;
+  font-size: vmax;
+  outline: none;
+}
+label,
+input,
+textarea {
+  color: $bg-primary;
+}
+
+@media (max-width: 1200px) {
+  .contact-wrapper {
+    h2,
+    .desc {
+      zoom: 1.1;
+    }
+    form {
+      width: 70%;
+    }
+  }
+}
+@media (max-width: 700px) {
+  .contact-wrapper {
+    h2,
+    .desc {
+      zoom: 1.4;
+    }
+    h2 {
+      font-size: 3.5vmax;
+    }
+    .desc {
+      width: 70%;
+      > p {
+        font-size: 1.3vmax;
+      }
+    }
+    form {
+      width: 90%;
+      height: 60%;
+
+      .details {
+        flex-direction: column;
+      }
+
+      .submit .btn {
+        font-size: 2vmax;
+        width: 50%;
+        padding: 2vmax;
+        background: $bg-primary;
+        color: $white;
+        &:hover {
+          &::before {
+            width: 0;
+          }
+        }
+      }
+    }
+  }
+}

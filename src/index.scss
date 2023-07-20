@@ -1,0 +1,47 @@
+@import url("https://fonts.googleapis.com/css2?family=Source+Code+Pro:ital,wght@0,200;0,300;0,500;0,600;0,700;0,800;0,900;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap");
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Source Code Pro", monospace;
+  // border: 2px solid red;
+}
+
+*::-moz-selection {
+  /* Code for Firefox */
+  color: inherit;
+  background: inherit;
+}
+
+*::selection {
+  color: inherit;
+  background: inherit;
+}
+
+$font-dark: #555;
+$font-blue: #3d155f;
+$bg-primary: #4831d4;
+$bg-secondary: #ccf381;
+$white: #fff;
+
+$medium: 1280px;
+$small: 700px;
+
+/* Hide scrollbar for Chrome, Safari and Opera */
+*::-webkit-scrollbar {
+  display: none;
+}
+
+/* Hide scrollbar for IE, Edge add Firefox */
+* {
+  -ms-overflow-style: none;
+  scrollbar-width: none; /* Firefox */
+}
+
+a {
+  text-decoration: none;
+}
+li {
+  list-style: none;
+}

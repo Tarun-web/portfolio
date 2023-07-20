@@ -1,0 +1,98 @@
+@import '../../../../index.scss';
+
+nav{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    position: relative;
+    height: 15vh;
+
+    .logo{
+        font-size: 6vmax;
+        font-weight: bolder;
+        font-style: italic;
+        letter-spacing: -1.5vmax;
+        pointer-events: none;
+        color: $bg-secondary;
+    }
+
+    .light{
+        display: none;
+    }
+
+    .menu{
+        position: absolute;
+        right: 0;
+        top: 100%;
+        padding: 0 1.3vmax 2vmax;
+        // border: 1px solid green;
+        pointer-events: none;
+        opacity: 0;
+        transform: translateY(-50%);
+        transition: all 0.3s ease-in-out;
+        box-shadow: -1px 1px 2px rgba(0,0,0,.4);
+        background: $white;
+        padding-top: 2vmax;
+
+
+        ul{
+            display: flex;
+            flex-direction: column;
+            gap: 2vmax;
+            color: $font-dark;
+            position: relative;
+
+            .menu-items{
+                position: relative;
+                cursor: pointer;
+
+                .menu-link::after{
+                    content: '';
+                    position: absolute;
+                    bottom: -.6vmax;
+                    left: 0;
+                    height: 3px;
+                    border-radius: 5px;
+                    width: 0%;
+                    transition: width 0.2s ease-in-out;
+                    background-color: $font-dark;
+                }
+                &:hover{
+                    .menu-link::after{
+                        width: 80%;
+                    }
+                }
+                
+
+                a{
+                    color: $font-dark;
+                }
+            }
+            
+        }
+    }
+    .burger, .close, .dark, .light{
+        cursor: pointer;
+        color: $bg-secondary;
+    }
+    .burger, .close{
+        color: $bg-primary;
+    }
+    .close{
+        display: none;
+    }
+    .menu.active{
+        pointer-events: all;
+        opacity: 1;
+        transform: translateY(0%);
+    }
+}
+
+@media (max-width: 700px){
+    nav{
+        zoom: 1.1;
+    }
+    nav .burger, nav .close{
+        color: $bg-secondary;
+    }
+}
